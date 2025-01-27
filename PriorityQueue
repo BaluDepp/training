@@ -1,0 +1,22 @@
+package test;
+import java.io.*;
+import java.util.*;
+  public class Test {
+      public static void main(String[] args) { 
+      PriorityQueue<Integer> q=new PriorityQueue<>((a,b)-> b-a);
+       q.add(7);
+       q.add(7);
+       q.add(9);
+       System.out.println(q);
+       while(q.size()>1) {
+           int fm=q.poll();
+           int sm=q.poll();
+           if(sm!=fm){
+               q.add(fm/2);
+           }
+           System.out.println(q);
+       }
+      
+      }
+  }
+      
