@@ -1,0 +1,187 @@
+  package sun;
+import java.io.*;
+import java.util.*;
+
+public class moon {
+    public static void main(String[] args) {
+  stackarray sa=new stackarray();
+  sa.push(10);
+  sa.push(30);
+  sa.push(20);
+  sa.push(40);
+  sa.display();
+}
+    }   
+class stackarray{
+	 
+	public int n=5;
+	public int s[]=new int[n];
+	int top;
+	public stackarray() {
+		this.top=-1;
+	}
+public void push(int value) {
+	if(top==n-1) System.out.println("Over flow");
+	else s[++top]=value;
+}
+public void display() {
+	//for(int i-top;i>=0;i++)
+	for(int i=0;i<=top;i++) {
+		System.out.println(s[i]+" ");
+	}
+}
+}
+
+case (2)
+
+  package sun;
+import java.io.*;
+import java.util.*;
+
+public class moon {
+    
+	public static void main(String[] args) {
+ stack sa=new stack();
+ sa.push(10);
+ sa.push(20);
+ sa.push(30);
+ sa.push(40);
+ sa.push(50);
+ sa.display();
+  System.out.println("the pop value is : "+ sa.pop());
+}
+}
+class stack{
+	int n=5;
+	int s[]=new int[n];
+	int top;
+	public stack() {
+		this.top=-1;
+	}
+	public void push(int value) {
+		if(top==n-1) {
+			System.out.println("Over Flow");
+		}
+		else {
+			s[++top]=value;
+			 
+		}
+		
+	}
+	public int pop() {
+	if(top==-1) {
+		System.out.println("Under Flow");
+	    return -1000;
+	}
+	else {
+		return s[top--];
+	}
+	}
+	
+	public void display() {
+		for(int i=0;i<=top;i++) {
+			System.out.println(s[i] +" ");
+		}
+	}
+}
+===================================================================================================================================================================
+Stack implementation in valid paranthesis
+
+
+package sun;
+import java.io.*;
+import java.util.*;
+
+public class moon {
+    
+	public static void main(String[] args) {
+		
+		String a;
+		Scanner s=new Scanner(System.in);
+		a=s.nextLine();
+		Stack<Character> sc=new Stack<>();
+		for(char c:a.toCharArray()) 
+		{
+			if(c=='(') sc.push(c);
+			else if(c=='{') sc.push(c);
+			else if(c=='[') sc.push(c);
+			
+			else if(c==')') {
+				if(sc.isEmpty()) {
+					System.out.println("false");
+				}
+				else if(sc.peek()=='(' && c==')')  {
+					
+					sc.pop();
+				}
+				else System.out.println("false");
+			}
+				else if(c=='}')  {
+					if(sc.isEmpty()) {
+						System.out.println("false");
+					}
+					else if(sc.peek()=='{' && c=='}')  {
+						
+						sc.pop();
+					}
+					else System.out.println("false");
+				}
+					else if(c==']')  {
+						if(sc.isEmpty()) {
+							System.out.println("false");
+						}
+						else if(sc.peek()=='[' && c==']')  {
+							
+							sc.pop();
+						}
+						else	System.out.println("false");
+					}	
+		
+			}
+		if(sc.isEmpty()) {
+			System.out.println("true");}
+		else {
+			System.out.println("false");		
+		}
+	
+}
+	}
+============================================================================================================================================================================
+( Google Meet )notes:
+
+
+class Solution {
+    public int maxDepth(String s) {
+        Stack <Character> st = new Stack<>();
+        int count = 0;
+        for(char c:s.toCharArray()){
+            if(c == '('){
+                st.push(c);
+               
+            }
+            else if(c == ')'){
+                st.pop();
+            }
+            count = Math.max(count,st.size());
+          
+        }
+        return count;
+    }
+}
+Gokul Km
+2:48?PM
+1021 - Simple soln class Solution {
+    public String removeOuterParentheses(String s) {
+        StringBuilder sb = new StringBuilder();
+        Stack<Character> st = new Stack<>();
+        for(char c : s.toCharArray()){
+            if(st.isEmpty() && c == '('){
+                st.push('(');
+            }
+            else if(!st.isEmpty() && c == '('){
+                st.push(c);
+                sb.append(c);
+            }
+            else if(st.size() >1 && c == ')'){
+                st.pop();
+==========================================================================================================================================================================
