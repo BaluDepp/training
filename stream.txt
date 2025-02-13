@@ -1,0 +1,73 @@
+Rohith Raja S
+3:09?PM
+import java.util.stream.IntStream;
+
+public class Streams {
+    @FunctionalInterface
+    interface GPA{
+        int cal1(int a, int b);
+    }
+    public static void main(String[] args){
+        int[][] marks = {{9,8,9},{4,3,2}};
+        GPA obj = (a,b) -> a*b;
+        double gpa = IntStream.range(0,marks[0].length).mapToDouble(i->marks[0][i]*marks[1][i]).sum() / IntStream.of(marks[1]).sum();
+        System.out.println(gpa);
+    }
+}
+===================================================================================================================================================================================================================
+Aashif Shadin K N
+4:55?PM
+import java.util.Arrays;
+import java.util.List;
+
+public class Streams {
+    public static void main(String[] args) {
+        List<String> names = Arrays.asList("Apple", "Balu", "Cat", "Dog", "Egg");
+
+        List<String> result = names.stream()
+            .filter(name -> name.length() ==5)      // Intermediate operation
+            .peek(name -> System.out.println("Filtered name: " + name)) // Debugging
+            .map(String::toUpperCase)               // Intermediate operation
+            .p
+Praveen Kumar
+4:55?PM
+import java.util.*; 
+class Main { 
+	public static void main(String[] args) {
+		List<Integer> list = Arrays.asList(1, 1, 2, 3, 3, 4, 5, 5); 
+		System.out.println("The distinct elements are :"); 
+		list.stream().distinct().forEach(System.out::println); 
+
+		}}
+==============================================================================================================================================
+Dhanaa lakshmi . N
+4:56?PM
+import java.util.*;
+import java.util.stream.*;
+
+public class Main {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8);
+
+        List<Integer> remainingNumbers = numbers.stream()
+                                                .limit(3)
+                                                .collect(Collectors.toList());
+
+        System.out.println(remainingNumbers); 
+    }
+}
+========================================================================================================================
+import java.util.*;
+import java.util.stream.*;
+
+public class Main {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8);
+
+        List<Integer> remainingNumbers = numbers.stream()
+                                                .skip(3)
+                                                .collect(Collectors.toList());
+
+        System.out.println(remainingNumbers);
+    }
+}
